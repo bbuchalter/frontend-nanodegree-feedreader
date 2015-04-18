@@ -67,20 +67,26 @@ $(function() {
         });
     });
 
+    describe("Initial entries", function() {
+        beforeEach(function(done) {
+            loadFeed(0, done);
+        });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+        it("are present", function() {
+            expect($(".feed .entry").length).toBeGreaterThan(0);
+        });
+    });
 
-        /* TODO: Write a test that ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test wil require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
-         */
+    describe("New Feed Selection", function() {
+        var originalHeaderText;
 
-    /* TODO: Write a new test suite named "New Feed Selection"
+        beforeEach(function(done) {
+            originalHeaderText = $("h1.header-title").text();
+            loadFeed(1, done);
+        });
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+        it("are present", function() {
+            expect($("h1.header-title").text()).not.toBe(originalHeaderText);
+        });
+    });
 }());
