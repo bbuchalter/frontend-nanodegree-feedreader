@@ -1,4 +1,4 @@
-# http://bbuchalter.github.io/frontend-nanodegree-feedreader/
+# See tests running by visiting http://bbuchalter.github.io/frontend-nanodegree-feedreader/
 
 # Project Overview
 
